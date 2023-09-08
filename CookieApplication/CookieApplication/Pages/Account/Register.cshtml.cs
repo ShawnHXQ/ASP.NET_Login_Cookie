@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+using CookieApplication.Data;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace CookieApplication.Pages.Account
+{
+    [AllowAnonymous]
+    public class RegisterModel : PageModel
+    {
+        private readonly ApplicationDbContext Db;
+
+        public RegisterModel(ApplicationDbContext _db)
+        {
+            Db = _db;
+        }
+        [BindProperty]
+        public InputModel Input { get; set; }
+        public string ReturnUrl { get; set; }
+        public IList<AuthenticationScheme> MyProperty { get; set; }
+
+        public class InputModel
+        {
+            [Required]
+            [EmailAddress]
+            [Display(Name = "Email")]
+            public string Email { get; set; }
+
+            [Required]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} character long")]
+            [DataType(DataType.Password)]
+            [Display(Name = "Password")]
+            public string Password { get; set; }
+
+
+            [DataType(DataType.Password)]
+            [Compare("Password", ErrorMessage = "The password do not match.")]
+            [Display(Name = "Confirm Password")]
+            public string ConfirmPassword { get; set; }
+        }
+
+
+        public async Task OnGetAsync(string returnUrl = null)
+        {
+            ReturnUrl = returnUrl;
+        }
+
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        {
+            returnUrl ??= Url.Content("~/");
+            if (ModelState.IsValid)
+            {
+                var user = Db.Users.Where(f => f.Email == Input.Email).FirstOrDefault();
+                if (user != null)
+                {
+                    ModelState.AddModelError(string.Empty, Input.Email + "Already exists");
+
+                }
+                else
+                {
+                    user = new User { Email = Input.Email, Password = Input.Password };
+
+                    Db.Users.Add(user);
+                    await Db.SaveChangesAsync() ;
+                    RedirectToPage("RegisterConfirmation", new { email = Input.Email });
+
+                }
+            }
+            return Page(); 
+        }
+
+
+    }
+}

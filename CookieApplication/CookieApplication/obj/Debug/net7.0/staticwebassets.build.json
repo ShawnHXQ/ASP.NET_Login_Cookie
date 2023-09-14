@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "obC/gvkFNkcAxhZodc8CE+zuN3SKpcfQmuOZQMJ7pE4=",
+  "Hash": "E9gieBvQxEOMRVURY6TgwGci45W2AKahFsV1Pspdhlg=",
   "Source": "CookieApplication",
   "BasePath": "_content/CookieApplication",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/xiaoqianhe/Desktop/Cookie_Authenrization_Login/ASP.NET_Login_Cookie/CookieApplication/CookieApplication/obj/Debug/net7.0/scopedcss/projectbundle/CookieApplication.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/xiaoqianhe/Desktop/Cookie_Authenrization_Login/ASP.NET_Login_Cookie/CookieApplication/CookieApplication/wwwroot/css/self.css",
+      "SourceId": "CookieApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/xiaoqianhe/Desktop/Cookie_Authenrization_Login/ASP.NET_Login_Cookie/CookieApplication/CookieApplication/wwwroot/",
+      "BasePath": "_content/CookieApplication",
+      "RelativePath": "css/self.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/self.css"
     },
     {
       "Identity": "/Users/xiaoqianhe/Desktop/Cookie_Authenrization_Login/ASP.NET_Login_Cookie/CookieApplication/CookieApplication/wwwroot/css/site.css",

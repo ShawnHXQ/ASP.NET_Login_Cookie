@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/CookieApplication.bundle.scp.css"
     },
     {
+      "Id": "/Users/xiaoqianhe/Desktop/Cookie_Authenrization_Login/ASP.NET_Login_Cookie/CookieApplication/CookieApplication/wwwroot/css/self.css",
+      "PackagePath": "staticwebassets/css/self.css"
+    },
+    {
       "Id": "/Users/xiaoqianhe/Desktop/Cookie_Authenrization_Login/ASP.NET_Login_Cookie/CookieApplication/CookieApplication/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
